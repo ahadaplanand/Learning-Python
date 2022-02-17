@@ -5,25 +5,23 @@
 # один аргумент и занимает N символов с выравниваением и заполнением (используем format)
 
 def main(data, str_length, align='center', filling='*'):
-
     if align == 'center':
-        str1 = '{0:%c^%ds}' %(filling, str_length)
+        s_align = '^'
     elif align == 'left':
-        str1 = '{0:%c<%ds}' %(filling, str_length)
+        s_align = '<'
     elif align == 'right':
-        str1 = '{0:%c>%ds}' %(filling, str_length)
+        s_align = '>'
 
     full_str = ''
-    
     for i in data:
-        str2 = str1.format(str(i))
-        full_str += str2 + '\n'
+        full_str += '{0:{1}{2}{3}s}'.format(str(i), filling, s_align, str_length) + '\n'
     full_str = full_str[:-1]
 
-    print(full_str)
+    return full_str
 
-main([1, 51, 372, 44, 5497829], 10)
+
+print(main([1, 51, 372, 44, 5497829], 10))
 print('--------------------------')
-main(['study', 'lol', 'program'], 8, 'right', '#')
+print(main(['study', 'lol', 'program'], 8, 'right', '#'))
 print('--------------------------')
-main(['qwerty', 34, 'python', 77, 'github'], 15, 'left', '^')
+print(main(['qwerty', 34, 'python', 77, 'github'], 15, 'left', '^'))
