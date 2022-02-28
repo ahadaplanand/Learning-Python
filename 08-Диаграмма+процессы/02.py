@@ -7,7 +7,7 @@ def draw_pie(*args):
         label.append(i[1])
         color.append(i[2])
     pt.pie(segment, colors=color, startangle=90, autopct='%1.2f%%')
-    pt.legend(label, loc='best')
+    pt.legend(label)
     pt.show()
 
 draw_pie([15, 'Margareth', 'green'], [23, 'Andres', 'yellow'], \
