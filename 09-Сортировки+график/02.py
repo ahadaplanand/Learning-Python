@@ -53,12 +53,12 @@ def time_sort(first, last, step):
 
 
 def make_graph():
-    process = multiprocessing.Process(target=time_sort, args=[200, 4000, 50])
-    res1_bubble, res1_quicksort, count1 = process.start()
-    process = multiprocessing.Process(target=time_sort, args=[4000, 5200, 50])
-    res2_bubble, res2_quicksort, count2 = process.start()
-    process = multiprocessing.Process(target=time_sort, args=[5200, 6001, 50])
-    res3_bubble, res3_quicksort, count3 = process.start()
+    process1 = multiprocessing.Process(target=time_sort, args=[200, 4000, 50])
+    res1_bubble, res1_quicksort, count1 = process1.start()
+    process2 = multiprocessing.Process(target=time_sort, args=[4000, 5200, 50])
+    res2_bubble, res2_quicksort, count2 = process2.start()
+    process3 = multiprocessing.Process(target=time_sort, args=[5200, 6001, 50])
+    res3_bubble, res3_quicksort, count3 = process3.start()
 
     res_bubble = res1_bubble + res2_bubble + res3_bubble
     res_quicksort = res1_quicksort + res2_quicksort + res3_quicksort
@@ -70,4 +70,5 @@ def make_graph():
 
 
 
-make_graph()
+# make_graph()
+# не работает

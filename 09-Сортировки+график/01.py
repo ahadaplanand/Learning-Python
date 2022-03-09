@@ -2,12 +2,15 @@ from random import shuffle, choice
 from time import time
 import matplotlib.pyplot as pt
 
+
+
 def bubble(llist):
     for i in range(len(llist) - 1):
         for j in range(len(llist) - i - 1):
             if llist[j] > llist[j + 1]:
                 llist[j], llist[j + 1] = llist[j + 1], llist[j]
     return(llist)
+
 
 def quicksort(llist):
    if len(llist) <= 1:
@@ -47,11 +50,14 @@ def time_sort(first, last, step):
         res_quicksort.append(t_quicksort)
     return res_bubble, res_quicksort, count
 
+
 def make_graph(first, last, step):
     res_bubble, res_quicksort, count = time_sort(first, last, step)
-    # pt.plot(count, res_bubble, color='orange')
+    pt.plot(count, res_bubble, color='orange')
     pt.plot(count, res_quicksort, color='pink')
     pt.title('Comparison of bubble and quicksort')
     pt.show()
+
+
 
 make_graph(200, 6000, 50)
