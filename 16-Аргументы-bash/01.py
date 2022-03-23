@@ -1,13 +1,9 @@
-import sys
+import sys, argparse
 
-class SourceNotFound(Exception):
-    pass
+def main():
+    if '--source' in sys.argv:
+        source_index = sys.argv.index('--source') + 1
+        if source_index < len(sys.argv):
+            return sys.argv[source_index]
 
-def main(args):
-    if '--source' in args:
-        source_index = args.index('--source') + 1
-        if source_index < len(args):
-            return args[source_index]
-    raise SourceNotFound
-
-print(main(sys.argv))
+print(main())
