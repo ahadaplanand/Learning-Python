@@ -10,7 +10,7 @@ connection = sqlite3.connect(database = \
 cursor = connection.cursor()
 
 HOST = '127.0.0.1'
-PORT = 12346
+PORT = 12345
 AUTH_OK = 'Auth ok'
 
 def enc(s):
