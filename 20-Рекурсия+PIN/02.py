@@ -9,5 +9,5 @@ def main(pin):
                 for i4 in neigh[pin[3]]:
                     nums.append(str(i1) + str(i2) + str(i3) + str(i4))
     return nums
-    
+
 print(len(main((4, 0, 3, 7))))
