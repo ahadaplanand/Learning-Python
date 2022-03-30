@@ -12,7 +12,7 @@ class Tree_node:
             cls.print_depth(child)
 
     @classmethod
-    def print_breadth(cls, head):
+    def print_breadth(head):
         visited = []
         def bfs(head, visited, queue):
             visited.append(head)
@@ -40,3 +40,5 @@ class Tree_node:
 
 head = Tree_node(1, \
     [Tree_node(i, [Tree_node(j * i) for j in range(5, 8)]) for i in range (2, 5)])
+
+head.print_breadth(head)
