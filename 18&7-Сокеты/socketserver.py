@@ -3,8 +3,6 @@ from pprint import pprint
 import threading
 import sqlite3
 
-from numpy import append
-
 connection = sqlite3.connect(database = \
     '/home/sirius/Study/Learning-Python/18@-Сокеты/ban_db')
 cursor = connection.cursor()
