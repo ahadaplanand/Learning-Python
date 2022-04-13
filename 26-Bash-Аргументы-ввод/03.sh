@@ -2,17 +2,17 @@
 
 # Авторизация | 02.sh - регистрация
 
-read -p "Enter your login: " login
+login=$(zenity --entry --text="Entert your login:")
 
 flag="0"
-cat hash_passwd | while read line    
+while IFS= read -r line    
     do
         IFS=' ' read -ra data <<< $line
         if [ "${data[0]}" = "$login" ]
         then
-        read -s -p "Enter your password: " password
-        hashpasswd="${data[1]} ${data[2]}"
-        enterpasswd=$(echo "$password" | md5sum)
+        password=$(zenity --password --text="Entert your password:")
+        hashpasswd="${data[1]}  ${data[2]}"
+        enterpasswd=$(echo -n "$password" | md5sum)
             if [ "$hashpasswd" = "$enterpasswd" ]
             then
             echo "Successful authentication!"
@@ -22,11 +22,11 @@ cat hash_passwd | while read line
         flag="1"
         break
         fi
-    done
+    done < hash_passwd
 
 if [ "$flag" = "0" ]
 then
 echo "User not found(("
 fi
 
-# Пока не работает
+# line=$(sed '5!d' file) - получаем нужную строку

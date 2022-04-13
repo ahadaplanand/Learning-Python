@@ -8,8 +8,9 @@ read -s -p "Repeat your password: " rpassword
 
 if [ $password = $rpassword ]
 then
-printf "$login " >> hash_passwd
-printf "$password" | md5sum >> hash_passwd
+echo -n "$login " >> hash_passwd
+echo -n "$password" | md5sum >> hash_passwd
+echo "Success"
 else
 echo "Passwords dont match(("
 fi
