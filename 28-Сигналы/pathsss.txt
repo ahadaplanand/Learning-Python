@@ -1,0 +1,4 @@
+/home/vealniycahko/Study/Python/28-Сигналы/errors
+/home/vealniycahko/Study/Python/28-Сигналы/notexists
+/home/vealniycahko/Study/Python/28-Сигналы/output_2
+/home/vealniycahko/Study/Python/28-Сигналы/output
