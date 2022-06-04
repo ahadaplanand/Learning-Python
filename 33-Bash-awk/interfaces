@@ -1,0 +1,12 @@
+BEGIN {
+print "THIS IS BEGINNING"
+print "NETIFACE \t IP \t MASK \t GATEWAY"
+}
+
+{
+print $1 " \t " $6
+}
+
+END {
+print "AND THIS IS THE AND"
+}

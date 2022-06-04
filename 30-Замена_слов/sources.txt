@@ -1,0 +1,3 @@
+/home/vealniycahko/Study/Python/30/01.txt
+/home/vealniycahko/Study/Python/30/02.txt
+/home/vealniycahko/Study/Python/30/03.txt
